@@ -74,7 +74,7 @@ def backup_status(env):
 		"/usr/local/bin/duplicity",
 		"collection-status",
 		"--archive-dir", backup_cache_dir,
-		"--gpg-options", "--cipher-algo=AES256",
+		"--gpg-options", "--cipher-algo AES256",
 		"--log-fd", "1",
 		get_duplicity_target_url(config),
 		] + get_duplicity_additional_args(env),
@@ -362,7 +362,7 @@ def perform_backup(full_backup, user_initiated=False):
 			"--archive-dir", backup_cache_dir,
 			"--exclude", backup_root,
 			"--volsize", "250",
-			"--gpg-options", "--cipher-algo=AES256",
+			"--gpg-options", "--cipher-algo AES256",
 			env["STORAGE_ROOT"],
 			get_duplicity_target_url(config),
 			"--allow-source-mismatch"
